@@ -1,0 +1,20 @@
+.hello{
+    color: red;
+    background: url('../assets/snowy_alaska.jpg')
+}
+.renderer{
+    margin:0;
+    position:fixed;
+    top:0;
+    left:0;
+}
+.content{
+    position:absolute;
+    color:white;
+}
+
+body{
+    margin:0;
+    height: 100vh;
+    background-color:#212121;
+}

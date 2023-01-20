@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "three": "^0.148.0",
+    "url-loader": "^4.1.1"
+  },
+  "name": "how-2-sandwich",
+  "version": "1.0.0",
+  "description": "A site designed to teach those not fortunate enough about the beauty of the sandwhich",
+  "main": "index.js",
+  "private": "true",
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack serve"
+  },
+  "author": "Eric Boysen",
+  "license": "ISC"
+}
