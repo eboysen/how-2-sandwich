@@ -1,7 +1,7 @@
 # 🥪 Welcome 2 Sandwich
 ![Alt text](src/assets/sandwich.png)
 
-How 2 Sandwhich is a hobby project that I made as a spinoff of my other small site called [How 2 Grilled Cheese](how2grilledcheese.com) which just showed a quick svg animation of a grilled cheese sandwich being made as instruction for those who may not otherwise know how to make such a sandwich. 
+How 2 Sandwhich is a hobby project that I made as a spinoff of my other small site called [How 2 Grilled Cheese](https://www.how2grilledcheese.com/) which just showed a quick svg animation of a grilled cheese sandwich being made as instruction for those who may not otherwise know how to make such a sandwich. 
 
 This new site expands upon that feature set tremendously by making use of three.js to render 3D models of sandwhich ingredients and allow for any type of sandwich to be dynamically rendered for the user.
 
