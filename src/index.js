@@ -30,31 +30,26 @@ const message = document.getElementById("message");
 configureCamera();
 addObjectsToScene();
 addRendererToDOM();
-let bread1 = await getIngredient(BreadModel);
-bread1.position.x=0;
-bread1.position.z=25;
-bread1.position.y=-10;
-let bread2 = await getIngredient(TomatoModel);
-bread2.position.x=0;
-bread2.position.z=25;
-bread2.position.y=-6;
-let bread3 = await getIngredient(LettuceModel);
-bread3.position.x=0;
-bread3.position.z=25;
-bread3.position.y=-2;
-let bread4 = await getIngredient(CheeseModel);
-bread4.position.x=0;
-bread4.position.z=25;
-bread4.position.y=2;
-let bread5 = await getIngredient(TomatoModel);
-bread5.position.x=0;
-bread5.position.z=25;
-bread5.position.y=6;
-let bread6 = await getIngredient(BreadModel);
-bread6.position.x=0;
-bread6.position.z=25;
-bread6.position.y=10;
-window.addEventListener('mousemove', onMouseMove);
+
+let [bread1, bread2, bread3, bread4, bread5, bread6] = await Promise.all(
+    [
+        [BreadModel, 0, 25, -10],
+        [TomatoModel, 0, 25, -6],
+        [LettuceModel, 0, 25, -2],
+        [CheeseModel, 0, 25, 2],
+        [TomatoModel, 0, 25, 6],
+        [BreadModel, 0, 25, 10],
+    ].map(async ([model, ...position]) => {
+        // get ingredient model
+        const ingredient = await getIngredient(model);
+        // set position of ingredient
+        [ingredient.position.x, ingredient.position.z, ingredient.position.y] =
+            position;
+        return ingredient;
+    })
+);
+
+window.addEventListener("mousemove", onMouseMove);
 animate();
 
 function configureCamera(){
