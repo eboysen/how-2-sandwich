@@ -43,7 +43,7 @@ let [bread1, bread2, bread3, bread4, bread5, bread6] = await Promise.all(
         // get ingredient model
         const ingredient = await getIngredient(model);
         // set position of ingredient
-        [ingredient.position.x, ingredient.position.y, ingredient.position.z] =
+        [ingredient.position.x, ingredient.position.z, ingredient.position.y] =
             position;
         return ingredient;
     })
