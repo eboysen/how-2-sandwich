@@ -13,27 +13,19 @@ Bread.getRenderer().classList.add("renderer");
 Bread.animate();
 
 async function addBread(){
-    return new Promise(async resolve => {
-        await Bread.addIngredient("Br");
-        resolve("Added Bread");
-      });
+    await Bread.addIngredient("Br");
 }
 
 async function addCheese(){
-    return new Promise(async () => {
-        await Bread.addIngredient("Ch")
-    });
+    await Bread.addIngredient("Ch")
 }
 
 async function addLettuce(){
-        await Bread.addIngredient("Lt")
+    await Bread.addIngredient("Lt")
 }
 
 async function addTomato(){
-    return new Promise(async resolve => {
-        await Bread.addIngredient("Tm")
-        resolve("Added Tomato");
-    });
+    await Bread.addIngredient("Tm")
 }
 
 function zoom(){
