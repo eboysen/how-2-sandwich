@@ -20,17 +20,13 @@ async function addBread(){
 }
 
 async function addCheese(){
-    return new Promise(async resolve => {
+    return new Promise(async () => {
         await Bread.addIngredient("Ch")
-        resolve("Added Cheese");
     });
 }
 
 async function addLettuce(){
-    return new Promise(async resolve => {
         await Bread.addIngredient("Lt")
-        resolve("Added Lettuce");
-    });
 }
 
 async function addTomato(){
@@ -58,4 +54,4 @@ document.getElementById("lettuceBtn").addEventListener("click",addLettuce, false
 document.getElementById("tomatoBtn").addEventListener("click",addTomato, false);
 document.getElementById("zoomBtn").addEventListener("click", zoom,false);
 
-buildGrilledCheese();
+//buildGrilledCheese();
