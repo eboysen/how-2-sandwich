@@ -1,9 +1,12 @@
 import * as THREE from 'three';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
-import { ObjectLoader, Vector2, Vector3 } from 'three';
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 import { PMREMGenerator } from 'three';
+import Bread from '../assets/bread.glb';
+import Cheese from '../assets/cheese.glb';
+import Tomato from '../assets/tomato.glb';
+import Lettuce from '../assets/lettuce.glb';
+import Kitchen from '../assets/kitchen.jpeg';
 
 export class SandwhichBuilder{
     camera;
@@ -30,7 +33,7 @@ export class SandwhichBuilder{
             alpha:false,
         });
         this.envMap = new PMREMGenerator(this.renderer);
-        const kitchenTexture = new THREE.TextureLoader().load("./kitchen.jpeg");
+        const kitchenTexture = new THREE.TextureLoader().load(Kitchen);
         this.scene.background = kitchenTexture;
         this.renderer.setSize(width,height);
         this.camera.aspect = width/height;
@@ -60,20 +63,20 @@ export class SandwhichBuilder{
         
         var ingredient = "";
         if(selection === "Br"){
-            ingredient = "./bread.glb"
+            ingredient = Bread
             this.verticalPosition=1.1;
         }
         else if(selection === "Ch"){
-            ingredient = "./cheese.glb"
-            this.verticalPosition=1.1;
+            ingredient = Cheese
+            this.verticalPosition=.1;
         }
         else if(selection === "Lt"){
-            ingredient = "./lettuce.glb"
-            this.verticalPosition=1.1;
+            ingredient = Lettuce
+            this.verticalPosition=.3;
         }
         else if(selection === "Tm"){
-            ingredient = "./tomato.glb"
-            this.verticalPosition=1.1;
+            ingredient = Tomato
+            this.verticalPosition=.2;
         }
         return await this.getIngredient(ingredient)
     }
@@ -98,8 +101,9 @@ export class SandwhichBuilder{
                 let object = gltf.scene.children[0];
                 object.envMap = this.envMap.fromScene(this.scene, 0, 0.1, 1000);
                 console.log(object);
-                object.position.y = this.prevVert;
-                this.prevVert +=this.verticalPosition;
+                let bbox = new THREE.Box3().setFromObject(object);
+                object.position.y = this.prevVert+(bbox.max.y-bbox.min.y)/2;
+                this.prevVert +=bbox.max.y-bbox.min.y;
                 console.log(object.position.y);
                 this.scene.add( object );
                 resolve("Successfully added ingredient");

@@ -13,31 +13,19 @@ Bread.getRenderer().classList.add("renderer");
 Bread.animate();
 
 async function addBread(){
-    return new Promise(async resolve => {
-        await Bread.addIngredient("Br");
-        resolve("Added Bread");
-      });
+    await Bread.addIngredient("Br");
 }
 
 async function addCheese(){
-    return new Promise(async resolve => {
-        await Bread.addIngredient("Ch")
-        resolve("Added Cheese");
-    });
+    await Bread.addIngredient("Ch")
 }
 
 async function addLettuce(){
-    return new Promise(async resolve => {
-        await Bread.addIngredient("Lt")
-        resolve("Added Lettuce");
-    });
+    await Bread.addIngredient("Lt")
 }
 
 async function addTomato(){
-    return new Promise(async resolve => {
-        await Bread.addIngredient("Tm")
-        resolve("Added Tomato");
-    });
+    await Bread.addIngredient("Tm")
 }
 
 function zoom(){
@@ -58,4 +46,4 @@ document.getElementById("lettuceBtn").addEventListener("click",addLettuce, false
 document.getElementById("tomatoBtn").addEventListener("click",addTomato, false);
 document.getElementById("zoomBtn").addEventListener("click", zoom,false);
 
-buildGrilledCheese();
+//buildGrilledCheese();
