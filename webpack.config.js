@@ -6,6 +6,7 @@ module.exports = {
     index: './src/index.js',
     print: './src/print.js',
     sandwich: './src/sandwich.js',
+    creation: './src/creation.js'
   },
   experiments: {
     topLevelAwait: true
@@ -32,6 +33,13 @@ module.exports = {
       template: './src/pages/sandwich.html',
       filename: 'sandwich.html',
       chunks: ['sandwich']
+  }), 
+    new HtmlWebpackPlugin({
+      hash: true,
+      title: 'How 2 Sandwich | Creation',
+      template: './src/pages/creation.html',
+      filename: 'creation.html',
+      chunks: ['creation']
   }), 
   ],
   output: {

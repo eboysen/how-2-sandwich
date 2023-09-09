@@ -3,13 +3,30 @@
     <head>
         <meta charset="UTF-8">
         <title> <%= htmlWebpackPlugin.options.title %> </title>
+        <link rel="shortcut icon" href="./assets/logo.ico" />
     </head>
     <body>
-        <div id="canvas">
-            
-        </div>
-        <div class="content">
-            <h1 id="message">Welcome 2 Sandwich</h1>
+        <div class="splash-background">
+            <div class="content">
+                <h1 class="title">How 2 Sandwich</h1>
+                <div class="circle-container">
+                        <svg width="50%" viewBox="0 0 238 251" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M236.555 244.139C238.255 248.491 1.97919 254.802 1.97947 244.139C1.97975 233.477 -3.77409 78.9924 12.6065 78.9924C28.9871 78.9924 -2.00385 70.1003 1.97947 54.9394C20.8754 -16.9798 217.659 -16.9798 236.555 54.9394C240.538 70.1003 210.239 77.2147 226.475 78.9924C242.711 80.77 234.855 239.788 236.555 244.139Z" fill="#09BC8A" stroke="white"/>
+                        </svg>
+                </div>
+                <div class="button-container">
+                    <a href="sandwich.html">
+                        <div class="card">
+                            build a sandwich
+                        </div>
+                    </a>
+                    <a href="catalog.html">
+                        <div class="card">
+                            find a sandwich
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </body>
 </html>
